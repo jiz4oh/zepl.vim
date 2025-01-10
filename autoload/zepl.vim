@@ -28,12 +28,14 @@ function! zepl#start(cmd, ...) abort
         let name = printf('zepl: %s', cmd)
 
         if has('nvim')
-            " XXX: Hacky code to make Neovim's terminal to behave like Vim's.
-            set hidden | split | enew
+            " Neovim's terminal can't be opened in the background, so:
+            " Open it, make it hideable, then close it.
+            split | enew
             call termopen(cmd, {'on_exit': function('<SID>repl_closed')})
+            setlocal bufhidden=hide
             exec 'file ' . name | let b:term_title = name
             let s:repl_bufnr = bufnr('%')
-            quit
+            close
         else
             let s:repl_bufnr = term_start(cmd, {
                         \ 'term_name': name,
@@ -42,6 +44,7 @@ function! zepl#start(cmd, ...) abort
                         \ 'norestore': 1,
                         \ 'hidden': 1
                         \ })
+            call setbufvar(s:repl_bufnr, 'bufhidden', 'hide')
         endif
 
         call setbufvar(s:repl_bufnr, 'zepl_cmd', cmd)
