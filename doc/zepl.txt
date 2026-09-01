@@ -500,6 +500,13 @@ Examples:
 ==============================================================================
  4. CHANGE LOG                                                 *zepl-changelog*
 
+v1.7 [UNRELEASED]~
+
+  * Removed the `rlwrap` artefacting "fix" as the issue appears to have been
+    fixed in Vim or rlwrap.
+  * Fixes for Neovim from a fork: https://github.com/idbrii/zepl.vim
+  * Several small documentation fixes.
+
 v1.6 [2023-08-06]~
 
   * Added |'ZeplTerminalWinOpen'| auto-command that will run when the REPL
