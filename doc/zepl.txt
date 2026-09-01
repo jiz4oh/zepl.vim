@@ -109,16 +109,11 @@ Zepl uses the 'g:repl_config' dictionary for configuration.  The keys are
 filetype.
 
 The main configuration option is the `'cmd'` key which sets a default REPL
-command for buffers of that filetype.  Set the `'rlwrap'` key to `1` to fix
-any artefacting caused by using rlwrap with Zepl.  (This is only needed if the
-`'cmd'` is not prefixed with `rlwrap`.)
+command for buffers of that filetype.
 >
     let g:repl_config = {
                 \   'javascript': { 'cmd': 'node' },
-                \   'clojure': {
-                \     'cmd': 'clj',
-                \     'rlwrap': 1
-                \   },
+                \   'clojure': { 'cmd': 'clj' },
                 \   'scheme': { 'cmd': 'rlwrap csi' },
                 \   'julia':  { 'cmd': 'julia' }
                 \ }
@@ -379,22 +374,18 @@ position to the end of the line.
 A |buffer-variable| containing a |Dictionary| for configuring default REPL
 settings.
 
-Zepl only uses a few keys, `cmd`, `rlwrap` and `formatter`.  Other keys may be used
+Zepl only uses a couple of keys, `cmd` and `formatter`.  Other keys may be used
 by |zepl-contrib| extensions and you can even add your own for use in your own
 extensions.
 
 The `cmd` key is used to set the default interpreter command used by |:Repl|.
-
-Setting the `rlwrap` key to `1` will enable a fix for artefacting that may occur
-when using rlwrap with Zepl.  (This is only needed when the `cmd` is not
-prefixed with `rlwrap`.)
 
 See |zepl-formatter| to learn about the `formatter` key.
 >
     augroup zepl
         autocmd!
         autocmd FileType javascript let b:repl_config = { 'cmd': 'node' }
-        autocmd FileType clojure    let b:repl_config = { 'cmd': 'clj', 'rlwrap': 1 }
+        autocmd FileType clojure    let b:repl_config = { 'cmd': 'clj' }
         autocmd FileType scheme     let b:repl_config = { 'cmd': 'rlwrap csi' }
         autocmd FileType julia      let b:repl_config = { 'cmd': 'julia' }
     augroup END
@@ -413,11 +404,8 @@ configure default REPLs without needing to create lots of |autocmd|s or
 |ftplugin| files.
 >
     let g:repl_config = {
-                \   'javascript': { 'cmd': 'node' }
-                \   'clojure': {
-                \     'cmd': 'clj',
-                \     'rlwrap': 1
-                \   }
+                \   'javascript': { 'cmd': 'node' },
+                \   'clojure': { 'cmd': 'clj' }
                 \ }
 <
 If no 'b:repl_config' variable exists, Zepl will use 'g:repl_config' as a

@@ -142,17 +142,12 @@ Zepl uses the `g:repl_config` dictionary for configuration.  The keys are
 dictionaries of configuration options for that filetype.
 
 The main configuration option is the `cmd` key which sets a default REPL command
-for buffers of that filetype.  Set the `rlwrap` key to `1` to fix any
-artefacting caused by using rlwrap with Zepl.  (This is only needed if the `cmd`
-is not prefixed with `rlwrap`.)
+for buffers of that filetype.
 
 ```vim
 let g:repl_config = {
             \   'javascript': { 'cmd': 'node' },
-            \   'clojure': {
-            \     'cmd': 'clj',
-            \     'rlwrap': 1
-            \   },
+            \   'clojure': { 'cmd': 'clj' },
             \   'scheme': { 'cmd': 'rlwrap csi' },
             \   'julia':  { 'cmd': 'julia' }
             \ }
