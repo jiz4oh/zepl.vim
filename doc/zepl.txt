@@ -34,11 +34,13 @@ Zepl is a lightweight, simple and easy to use REPL integration package for Vim
 8.1+ and Neovim.  It provides a small set of key bindings and commands to
 start and interact with a running REPL.
 
-Please be aware of the 2 known limitations of Zepl:
+Please be aware of the known limitations of Zepl:
 
   * Only 1 REPL can be open at a time (per Vim instance).
   * 'hidden' is required for Neovim and will be automatically set.  It is
     optional for Vim, but recommended if you want to hide running REPLs.
+  * Neovim's `:terminal` may not behave as you expect it to and therefore might
+    lessen the experience with Zepl.
 
 ==============================================================================
  2. QUICK START                                               *zepl-quickstart*

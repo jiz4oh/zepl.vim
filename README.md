@@ -6,8 +6,6 @@ Zepl is a lightweight, simple and easy to use REPL integration package for Vim
 8.1+ and Neovim.  It provides a small set of key bindings and commands to start
 and interact with a running REPL.
 
-<!-- TODO: GIF and/or images -->
-
 
 ## Why use Zepl?
 
@@ -31,10 +29,10 @@ While it certainly is [not perfect][zepl2], I believe Zepl achieves these goals.
   [optional extensions](#additional-functionality).
 
 Zepl has had quite a few glowing reviews, but my favourite is
-[this one](https://old.reddit.com/r/vim/comments/o4mss8/how_to_run_julia_repl_in_neovim/h2q1nlp/):
+[this one](https://www.reddit.com/r/vim/comments/o4mss8/how_to_run_julia_repl_in_neovim/h2q1nlp/):
 
-> I have just tried your plugin and I just can't stop appreciating it! Its [sic]
-> just the prefect [sic] solution to my problem.
+> I have just tried your plugin and I just can't stop appreciating it! [It's]
+> just the [perfect] solution to my problem.
 >
 > It is brilliant, intuitive and is very natural to vim. I am amazed at this
 > beautiful tool.
@@ -55,12 +53,14 @@ vim +'helptags ~/.vim/pack/plugins/start/zepl/doc/' +q
 
 ### Limitations
 
-Before installing Zepl, you should be aware of the 2 known limitations.
+Before installing Zepl, you should be aware of the known limitations.
 
 - Only 1 REPL can be open at a time (per Vim instance).
 - [`set hidden`](https://vimhelp.org/options.txt.html#%27hidden%27) is required
   for Neovim and will be automatically set.  It is optional for Vim, but
   recommended if you want to hide running REPLs.
+- Neovim's terminal may not behave as you expect it to and therefore might
+  lessen the experience with Zepl.
 
 
 ## Quick start

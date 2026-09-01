@@ -1,28 +1,26 @@
-* Configurability
+- Documentation
+  - Add a GIF to the README?
 
-  - Maybe make the bufnr publicly accessible (but locked).
-    - Return from zepl#start() and zepl#jump() ?
+- Configurability
+  - Maybe make the `bufnr` publicly accessible (but locked).
+    - Return from `zepl#start()` and `zepl#jump()`?
   - Typing speed controls (e.g. for use over serial connections with picocom).
-    - line\_delay, char\_delay
+    - `line_delay`, `char_delay`
   - Improve default formatter.
   - Add helper functions for formatters to `autoload/zepl/fmt.vim`?
 
-
-* New functionality
-
+- New functionality
   - Extract output from terminal buffer.  `:h term_scrape()`
   - Multiple REPL support.
     - Vim prompt asking which REPL to use.
-    - Set 'cmd' to a list of strings, or set 'cmd' to a Vim function.
+    - Set `'cmd'` to a list of strings, or set `'cmd'` to a Vim function.
       - The function can then do the prompting and ask for additional info.
-    - In contrib?
+  - Tmux send-keys: <https://damonkelley.com/blog/2016/09/07/tmux-send-keys/>
 
-
-* Usability
-
+- Usability
   - Contrib modules with better defaults for specific languages.
     - Python, F#, Clojure, etc.
-    - E.g. runtime! zepl/contrib/fsharp_defaults.vim
+    - E.g. `runtime! zepl/contrib/fsharp_defaults.vim`
       - Auto-enable and configure load-files, cmd and formatter.
-      - Bind 'keywordprg' to a useful value.
+      - Bind `'keywordprg'` to a useful value.
       - Helper commands and functions.
